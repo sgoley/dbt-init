@@ -1,0 +1,6 @@
+version: 2
+
+sources:
+  - name: example_dataset
+    database: my_project
+    loader: loader_name

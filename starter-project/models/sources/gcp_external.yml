@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: my_gcp
+    database: my_project_id
+    loader: dbt-external-tables
+
+    tables:
+      - name: my_external_table
+        description: "External table of CSV files in Cloud Storage"
+        external:
+          location: 'gs://my_gcp_bucket/folder_in_gcp_bucket/*'
+          auto_refresh: false
+          options:
+            format: csv
+            skip_leading_rows: 1
